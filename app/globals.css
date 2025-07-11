@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-900 text-gray-100 font-mono;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  }
+
+  /* Terminal-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-green-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-green-400;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-green-500 text-black;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .card {
+    @apply bg-gray-800 rounded-lg shadow-code border border-gray-700 hover:border-green-500 transition-all duration-300;
+  }
+  
+  .terminal-card {
+    @apply bg-terminal-bg border border-green-500 shadow-terminal rounded-lg p-6;
+  }
+  
+  .code-block {
+    @apply bg-code-bg border border-gray-600 rounded-lg p-4 font-code text-sm;
+  }
+  
+  .btn-primary {
+    @apply bg-green-600 hover:bg-green-500 text-black font-medium py-2 px-4 rounded-lg transition-all duration-200 shadow-glow;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-700 hover:bg-gray-600 text-gray-100 font-medium py-2 px-4 rounded-lg transition-all duration-200 border border-gray-600 hover:border-green-500;
+  }
+  
+  .btn-outline {
+    @apply border border-green-500 text-green-500 hover:bg-green-500 hover:text-black font-medium py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .typing-animation {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-green-500 animate-typing;
+  }
+
+  .cursor-blink {
+    @apply animate-blink;
+  }
+
+  .skill-tag {
+    @apply px-3 py-1 text-xs bg-gray-700 text-green-400 rounded-full border border-gray-600 hover:border-green-500 transition-colors duration-200;
+  }
+
+  .timeline-dot {
+    @apply w-4 h-4 bg-accent-violet rounded-full border-4 border-white dark:border-[#10151a] shadow-lg;
+  }
+
+  .timeline-line {
+    @apply absolute left-2 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent-violet/50 to-transparent;
+  }
+
+  .project-card {
+    @apply card overflow-hidden hover:shadow-glow transition-all duration-300 transform hover:scale-105;
+  }
+
+  .stats-card {
+    @apply terminal-card text-center hover:shadow-glow transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 2s infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .font-code {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  .terminal-text {
+    @apply text-green-400 font-code;
+  }
+
+  .code-comment {
+    @apply text-green-600;
+  }
+
+  .code-keyword {
+    @apply text-blue-400;
+  }
+
+  .code-string {
+    @apply text-yellow-400;
+  }
+
+  .code-number {
+    @apply text-purple-400;
+  }
+} 
