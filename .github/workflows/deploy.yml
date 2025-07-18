@@ -24,10 +24,8 @@ jobs:
       run: npm ci
       
     - name: Build and export
-      run: DEPLOY_TARGET=GH_PAGES npm run export
-      env:
-        DEPLOY_TARGET: GH_PAGES
-        
+      run: npm run build
+      
     - name: Create .nojekyll file
       run: touch out/.nojekyll
       
