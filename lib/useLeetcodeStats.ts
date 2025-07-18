@@ -27,6 +27,8 @@ export function useLeetcodeStats(username?: string) {
   const [stats, setStats] = useState<LeetCodeStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+
 
   useEffect(() => {
     async function fetchLeetCodeData() {
@@ -36,15 +38,21 @@ export function useLeetcodeStats(username?: string) {
 
         const targetUsername = username || siteConfig.leetcode.username;
 
-        const response = await fetch(`${LEETCODE_API_URL}?username=${encodeURIComponent(targetUsername)}`, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        const url = `${LEETCODE_API_URL}?username=${encodeURIComponent(targetUsername)}`;
+        console.log('Attempting to fetch from:', url);
+        
+        let response;
+        try {
+          response = await fetch(url);
+          console.log('Response received:', response.status, response.statusText);
+          
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+        } catch (fetchError) {
+          console.error('Fetch error details:', fetchError);
+          throw fetchError;
         }
 
         const data = await response.json();

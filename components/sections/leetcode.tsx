@@ -4,8 +4,21 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Trophy, Target, TrendingUp, Code, Loader2 } from 'lucide-react'
 import { useLeetcodeStats, formatRanking, calculateCompletionPercentage } from '@/lib/useLeetcodeStats'
+import { siteConfig } from '@/config/site.config'
 
 export function LeetCodeSection() {
+  if (!siteConfig.showLeetCodeStats) {
+    return (
+      <section id="leetcode" className="section-padding bg-white dark:bg-[#10151a] transition-colors duration-300">
+        <div className="container-max">
+          <div className="text-center">
+            <p className="text-gray-600 dark:text-gray-400 mt-4 font-sans">LeetCode stats are hidden.</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -13,13 +26,37 @@ export function LeetCodeSection() {
 
   const { stats, loading, error } = useLeetcodeStats()
 
-  if (!stats) {
+  if (loading) {
     return (
       <section id="leetcode" className="section-padding bg-white dark:bg-[#10151a] transition-colors duration-300">
         <div className="container-max">
           <div className="text-center">
             <Loader2 className="w-8 h-8 animate-spin mx-auto text-accent-violet" />
             <p className="text-gray-600 dark:text-gray-400 mt-4 font-sans">Loading LeetCode stats...</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section id="leetcode" className="section-padding bg-white dark:bg-[#10151a] transition-colors duration-300">
+        <div className="container-max">
+          <div className="text-center">
+            <p className="text-red-500 mt-4 font-sans">Error loading LeetCode stats: {error}</p>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  if (!stats) {
+    return (
+      <section id="leetcode" className="section-padding bg-white dark:bg-[#10151a] transition-colors duration-300">
+        <div className="container-max">
+          <div className="text-center">
+            <p className="text-gray-600 dark:text-gray-400 mt-4 font-sans">No LeetCode data available</p>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { ProjectsSection } from '@/components/sections/projects'
 import { ExperienceSection } from '@/components/sections/experience'
 import { LeetCodeSection } from '@/components/sections/leetcode'
 import { ContactSection } from '@/components/sections/contact'
+import { siteConfig } from '@/config/site.config'
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <ExperienceSection />
-      <LeetCodeSection />
+      {siteConfig.showLeetCodeStats && <LeetCodeSection />}
       <ContactSection />
     </div>
   )
