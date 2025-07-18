@@ -19,9 +19,8 @@ export interface LeetCodeStats {
   }>;
 }
 
-
-
-const LEETCODE_API_URL = '/api/leetcode';
+// Use a public LeetCode stats API that doesn't have CORS issues
+const LEETCODE_STATS_API = 'https://leetcode-stats-api.herokuapp.com';
 
 export function useLeetcodeStats(username?: string) {
   const [stats, setStats] = useState<LeetCodeStats | null>(null);
@@ -29,8 +28,13 @@ export function useLeetcodeStats(username?: string) {
   const [error, setError] = useState<string | null>(null);
   
 
-
   useEffect(() => {
+    // Don't fetch if LeetCode stats are disabled
+    if (!siteConfig.showLeetCodeStats) {
+      setLoading(false);
+      return;
+    }
+
     async function fetchLeetCodeData() {
       try {
         setLoading(true);
@@ -38,78 +42,32 @@ export function useLeetcodeStats(username?: string) {
 
         const targetUsername = username || siteConfig.leetcode.username;
 
-
-        const url = `${LEETCODE_API_URL}?username=${encodeURIComponent(targetUsername)}`;
-        console.log('Attempting to fetch from:', url);
+        console.log('Attempting to fetch LeetCode data for:', targetUsername);
         
-        let response;
-        try {
-          response = await fetch(url);
-          console.log('Response received:', response.status, response.statusText);
-          
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-        } catch (fetchError) {
-          console.error('Fetch error details:', fetchError);
-          throw fetchError;
+        // Fetch from public LeetCode stats API
+        const response = await fetch(`${LEETCODE_STATS_API}/${targetUsername}`);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
 
-        if (data.error) {
-          console.error('API error:', data.error);
-          throw new Error(data.error);
+        if (data.status === 'error') {
+          throw new Error(data.message || 'Failed to fetch LeetCode data');
         }
 
-        if (data.errors) {
-          console.error('GraphQL errors:', data.errors);
-          throw new Error('Failed to fetch LeetCode data');
-        }
-
-        const matchedUser = data.data?.matchedUser;
-        const allQuestionsCount = data.data?.allQuestionsCount;
-
-        if (!matchedUser) {
-          throw new Error('User not found');
-        }
-
-        // Parse submission stats
-        const submitStats = matchedUser.submitStats?.acSubmissionNum || [];
-        let easySolved = 0;
-        let mediumSolved = 0;
-        let hardSolved = 0;
-        let totalSolved = 0;
-
-        submitStats.forEach((stat: any) => {
-          const count = stat.count || 0;
-          switch (stat.difficulty) {
-            case 'Easy':
-              easySolved = count;
-              break;
-            case 'Medium':
-              mediumSolved = count;
-              break;
-            case 'Hard':
-              hardSolved = count;
-              break;
-            case 'All':
-              totalSolved = count;
-              break;
-          }
-        });
-
-        // Create stats object
+        // Create stats object from the public API response
         const leetcodeStats: LeetCodeStats = {
-          username: matchedUser.username,
-          totalSolved,
-          ranking: matchedUser.profile?.ranking || 0,
-          rating: 0, // Contest rating not available in this query
-          easySolved,
-          mediumSolved,
-          hardSolved,
-          submissionCalendar: {},
-          recentSubmissions: [],
+          username: data.username,
+          totalSolved: data.totalSolved,
+          ranking: data.ranking,
+          rating: data.rating,
+          easySolved: data.easySolved,
+          mediumSolved: data.mediumSolved,
+          hardSolved: data.hardSolved,
+          submissionCalendar: data.submissionCalendar || {},
+          recentSubmissions: data.recentSubmissions || [],
         };
 
         setStats(leetcodeStats);
