@@ -38,28 +38,28 @@ export function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Skills */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6 font-sans text-accent-violet">Skills & Technologies</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-6 font-sans text-accent-violet">Skills & Technologies</h3>
             
             {Object.entries(skillCategories).map(([category, skills]) => (
               skills.length > 0 && (
                 <div key={category} className="mb-6">
-                  <h4 className="text-lg font-semibold mb-3 capitalize text-accent-violet font-sans">
+                  <h4 className="text-base lg:text-lg font-semibold mb-3 capitalize text-accent-violet font-sans">
                     {category}
                   </h4>
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {skills.map((skill) => (
                       <div
                         key={skill.name}
                         className="flex items-center justify-between p-3 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-lg hover:border-accent-violet transition-all duration-200"
                       >
-                        <span className="font-medium text-gray-900 dark:text-gray-100 font-sans">{skill.name}</span>
+                        <span className="font-medium text-gray-900 dark:text-gray-100 font-sans text-sm lg:text-base">{skill.name}</span>
                         <div className="flex gap-1">
                           {[...Array(5)].map((_, i) => (
                             <div
@@ -85,11 +85,11 @@ export function AboutSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="space-y-6"
+            className="space-y-4 lg:space-y-6"
           >
-            <div className="p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-              <h4 className="text-xl font-semibold mb-4 font-sans text-accent-violet">What I Do</h4>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300 font-sans">
+            <div className="p-4 lg:p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
+              <h4 className="text-lg lg:text-xl font-semibold mb-4 font-sans text-accent-violet">What I Do</h4>
+              <ul className="space-y-2 lg:space-y-3 text-gray-700 dark:text-gray-300 font-sans text-sm lg:text-base">
                 <li>Build responsive and scalable web applications</li>
                 <li>Design and implement RESTful APIs</li>
                 <li>Optimize applications for performance and SEO</li>
@@ -98,9 +98,9 @@ export function AboutSection() {
               </ul>
             </div>
 
-            <div className="p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-              <h4 className="text-xl font-semibold mb-4 font-sans text-accent-violet">My Approach</h4>
-              <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-sans">
+            <div className="p-4 lg:p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
+              <h4 className="text-lg lg:text-xl font-semibold mb-4 font-sans text-accent-violet">My Approach</h4>
+              <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-sans text-sm lg:text-base">
                 I believe in writing clean, maintainable code and creating user experiences 
                 that are both beautiful and functional. I'm always learning new technologies 
                 and best practices to stay current in this ever-evolving field.

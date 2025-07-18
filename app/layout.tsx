@@ -1,9 +1,16 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Header } from '@/components/header'
 import { siteConfig } from '@/config/site.config'
 import { profileName, personalTitle, personalBio } from '@/lib/config-utils'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://shahdab-aalam-saifi.vercel.app'),
@@ -12,12 +19,6 @@ export const metadata: Metadata = {
   keywords: ['Full Stack Developer', 'React', 'Node.js', 'TypeScript', 'Next.js', 'Web Development'],
   authors: [{ name: profileName() }],
   creator: profileName(),
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-    userScalable: false,
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

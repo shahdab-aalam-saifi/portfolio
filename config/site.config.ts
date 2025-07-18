@@ -217,5 +217,5 @@ export const siteConfig: SiteConfig = {
     username: "shahdab-aalam-saifi",
     pinnedRepos: ["portfolio", "ecommerce-platform", "task-manager"],
   },
-  showLeetCodeStats: false,
+  showLeetCodeStats: true,
 }; 

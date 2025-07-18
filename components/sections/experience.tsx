@@ -39,9 +39,9 @@ export function ExperienceSection() {
               className="mb-12"
             >
               {/* Experience Item */}
-              <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start">
                 {/* Left Side - Duration, Organization, Location */}
-                <div className="text-left md:w-48 flex-shrink-0">
+                <div className="text-left lg:w-48 flex-shrink-0">
                   <div className="mb-2">
                     <div className="text-sm text-accent-violet font-medium font-sans">
                       {new Date(exp.startDate).toLocaleDateString('en-US', { 
@@ -55,7 +55,7 @@ export function ExperienceSection() {
                   </div>
                   
                   <div className="mb-2">
-                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 font-sans">
+                    <h3 className="text-base lg:text-lg font-bold text-gray-900 dark:text-gray-100 font-sans">
                       {exp.company}
                     </h3>
                   </div>
@@ -68,10 +68,10 @@ export function ExperienceSection() {
 
                 {/* Right Side - Experience Card */}
                 <div className="flex-1">
-                  <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700">
+                  <div className="bg-white dark:bg-zinc-900 p-4 lg:p-6 rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700">
                     {/* Job Title */}
                     <div className="mb-4">
-                      <h4 className="text-xl font-bold text-gray-900 dark:text-gray-100 font-sans mb-3">
+                      <h4 className="text-lg lg:text-xl font-bold text-gray-900 dark:text-gray-100 font-sans mb-3">
                         {exp.position}
                       </h4>
                     </div>
