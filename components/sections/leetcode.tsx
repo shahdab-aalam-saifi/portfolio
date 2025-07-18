@@ -88,57 +88,57 @@ export function LeetCodeSection() {
           )}
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 flex flex-col items-center"
+            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col items-center"
           >
             <div className="flex items-center justify-center mb-4">
-              <Code className="w-8 h-8 text-accent-violet" />
+              <Code className="w-6 h-6 sm:w-8 sm:h-8 text-accent-violet" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.totalSolved}</h3>
-            <p className="text-gray-500 dark:text-gray-400 font-sans">Problems Solved</p>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.totalSolved}</h3>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Problems Solved</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 flex flex-col items-center"
+            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col items-center"
           >
             <div className="flex items-center justify-center mb-4">
-              <Trophy className="w-8 h-8 text-yellow-500" />
+              <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-yellow-500 font-sans">{formatRanking(stats.ranking)}</h3>
-            <p className="text-gray-500 dark:text-gray-400 font-sans">Global Ranking</p>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-yellow-500 font-sans">{formatRanking(stats.ranking)}</h3>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Global Ranking</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 flex flex-col items-center"
+            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col items-center"
           >
             <div className="flex items-center justify-center mb-4">
-              <TrendingUp className="w-8 h-8 text-accent-violet" />
+              <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-accent-violet" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.rating}</h3>
-            <p className="text-gray-500 dark:text-gray-400 font-sans">Contest Rating</p>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.rating}</h3>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Contest Rating</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6 flex flex-col items-center"
+            className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-4 sm:p-6 flex flex-col items-center"
           >
             <div className="flex items-center justify-center mb-4">
-              <Target className="w-8 h-8 text-purple-500" />
+              <Target className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500" />
             </div>
-            <h3 className="text-2xl font-bold mb-2 text-purple-500 font-sans">{completionPercentage}%</h3>
-            <p className="text-gray-500 dark:text-gray-400 font-sans">Completion Rate</p>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-purple-500 font-sans">{completionPercentage}%</h3>
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Completion Rate</p>
           </motion.div>
         </div>
 

@@ -12,6 +12,12 @@ export const metadata: Metadata = {
   keywords: ['Full Stack Developer', 'React', 'Node.js', 'TypeScript', 'Next.js', 'Web Development'],
   authors: [{ name: profileName() }],
   creator: profileName(),
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

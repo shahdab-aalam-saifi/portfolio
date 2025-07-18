@@ -63,9 +63,9 @@ export function HomeSection() {
         <div className="text-center">
           {/* Animated < > and typing name/title, no circle */}
           <div className="mb-8 flex justify-center items-center">
-            <span className="text-[4rem] font-bold text-accent-violet select-none dark:text-white">&lt;</span>
-            <span className="text-[4rem] font-bold font-dankmono typing-cursor px-4 flex items-center text-gray-900 dark:text-white" style={{height: '1em'}}>{displayed}</span>
-            <span className="text-[4rem] font-bold text-accent-violet select-none dark:text-white">&gt;</span>
+            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold text-accent-violet select-none dark:text-white">&lt;</span>
+            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold font-dankmono typing-cursor px-2 sm:px-4 flex items-center text-gray-900 dark:text-white" style={{height: '1em'}}>{displayed}</span>
+            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold text-accent-violet select-none dark:text-white">&gt;</span>
           </div>
 
           {/* Bio */}

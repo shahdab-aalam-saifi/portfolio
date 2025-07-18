@@ -29,7 +29,7 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 justify-center max-w-6xl mx-auto">
           {siteConfig.projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -46,9 +46,9 @@ export function ProjectsSection() {
                 </div>
               )}
               
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 font-sans">{project.title}</h3>
-                <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 font-sans">
+              <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 font-sans">{project.title}</h3>
+                <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 font-sans">
                   {project.description}
                 </p>
                 
