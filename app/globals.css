@@ -9,11 +9,39 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
-    @apply bg-gray-900 text-gray-100 font-mono;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    @apply bg-white dark:bg-[#10151a] text-gray-900 dark:text-gray-100 font-sans;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    font-feature-settings: 'liga' 1, 'kern' 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Dark mode background */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    }
+  }
+
+  /* Tablet-specific font improvements */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      letter-spacing: -0.025em;
+    }
+    
+    p {
+      line-height: 1.7;
+    }
   }
 
   /* Terminal-style scrollbar */
@@ -78,6 +106,15 @@
 
   .typing-animation {
     @apply overflow-hidden whitespace-nowrap border-r-2 border-green-500 animate-typing;
+  }
+
+  .typing-cursor {
+    @apply relative;
+  }
+
+  .typing-cursor::after {
+    content: '';
+    @apply absolute right-0 top-0 bottom-0 w-0.5 bg-accent-violet animate-pulse;
   }
 
   .cursor-blink {

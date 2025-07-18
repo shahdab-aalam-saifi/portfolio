@@ -63,13 +63,15 @@ export function HomeSection() {
         <div className="text-center">
           {/* Animated < > and typing name/title, no circle */}
           <div className="mb-8 flex justify-center items-center">
-            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold text-accent-violet select-none dark:text-white">&lt;</span>
-            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold font-dankmono typing-cursor px-2 sm:px-4 flex items-center text-gray-900 dark:text-white" style={{height: '1em'}}>{displayed}</span>
-            <span className="text-2xl sm:text-4xl md:text-[4rem] font-bold text-accent-violet select-none dark:text-white">&gt;</span>
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-accent-violet select-none dark:text-white">&lt;</span>
+            <div className="px-2 sm:px-4 flex items-center justify-center">
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold font-dankmono typing-cursor text-gray-900 dark:text-white whitespace-nowrap leading-none">{displayed}</span>
+            </div>
+            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-accent-violet select-none dark:text-white">&gt;</span>
           </div>
 
           {/* Bio */}
-          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed font-sans">
             {bio}
           </p>
 
@@ -77,20 +79,20 @@ export function HomeSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <a
               href="#projects"
-              className="px-6 py-2 rounded-lg bg-accent-violet text-white font-sans font-semibold shadow hover:bg-accent-violet/80 transition-colors duration-200 flex items-center gap-2"
+              className="px-8 py-3 rounded-lg bg-accent-violet text-white font-sans font-semibold shadow hover:bg-accent-violet/80 transition-colors duration-200 flex items-center gap-2 text-lg"
             >
               View My Work
             </a>
             <a
               href={`mailto:${email}`}
-              className="px-6 py-2 rounded-lg border border-accent-violet text-accent-violet font-sans font-semibold hover:bg-accent-violet hover:text-white transition-colors duration-200 flex items-center gap-2"
+              className="px-8 py-3 rounded-lg border border-accent-violet text-accent-violet font-sans font-semibold hover:bg-accent-violet hover:text-white transition-colors duration-200 flex items-center gap-2 text-lg"
             >
               Get In Touch
             </a>
           </div>
 
           {/* Location */}
-          <div className="text-sm text-gray-500 dark:text-gray-400 mb-8 font-sans">
+          <div className="text-lg sm:text-xl text-gray-500 dark:text-gray-400 mb-8 font-sans">
             📍 {location}
           </div>
 
@@ -105,7 +107,7 @@ export function HomeSection() {
               onClick={scrollToNext}
               className="flex flex-col items-center text-accent-violet hover:text-accent-violet/80 transition-colors duration-200"
             >
-              <span className="text-sm mb-2 font-sans">Scroll Down</span>
+              <span className="text-base sm:text-lg mb-2 font-sans">Scroll Down</span>
               <ChevronDown className="w-5 h-5 animate-bounce-slow" />
             </button>
           </motion.div>
