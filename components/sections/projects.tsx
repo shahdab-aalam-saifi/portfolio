@@ -21,7 +21,7 @@ export function ProjectsSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-grotesk text-gray-900 dark:text-gray-100">
             Featured <span className="bg-gradient-to-r from-accent-violet to-accent-violet/80 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-sans">
@@ -47,7 +47,7 @@ export function ProjectsSection() {
               )}
               
               <div className="p-4 sm:p-6 flex-1 flex flex-col">
-                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 font-sans">{project.title}</h3>
+                <h3 className="text-lg sm:text-xl font-bold mb-2 text-gray-900 dark:text-gray-100 font-grotesk">{project.title}</h3>
                 <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 font-sans">
                   {project.description}
                 </p>

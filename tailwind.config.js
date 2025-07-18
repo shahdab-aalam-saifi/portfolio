@@ -51,6 +51,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        grotesk: ['Space Grotesk', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
         code: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
         dankmono: ['Dank Mono', 'Fira Code', 'Consolas', 'monospace'],

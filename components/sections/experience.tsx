@@ -21,7 +21,7 @@ export function ExperienceSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-grotesk text-gray-900 dark:text-gray-100">
             Work <span className="bg-gradient-to-r from-accent-violet to-accent-violet/80 bg-clip-text text-transparent">Experience</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-sans">
@@ -55,7 +55,7 @@ export function ExperienceSection() {
                   </div>
                   
                   <div className="mb-2">
-                    <h3 className="text-base lg:text-lg font-bold text-gray-900 dark:text-gray-100 font-sans">
+                    <h3 className="text-base lg:text-lg font-bold text-gray-900 dark:text-gray-100 font-grotesk">
                       {exp.company}
                     </h3>
                   </div>
@@ -71,7 +71,7 @@ export function ExperienceSection() {
                   <div className="bg-white dark:bg-zinc-900 p-4 lg:p-6 rounded-xl shadow-md border border-zinc-200 dark:border-zinc-700">
                     {/* Job Title */}
                     <div className="mb-4">
-                      <h4 className="text-lg lg:text-xl font-bold text-gray-900 dark:text-gray-100 font-sans mb-3">
+                      <h4 className="text-lg lg:text-xl font-bold text-gray-900 dark:text-gray-100 font-grotesk mb-3">
                         {exp.position}
                       </h4>
                     </div>

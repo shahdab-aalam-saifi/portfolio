@@ -75,7 +75,7 @@ export function LeetCodeSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-grotesk text-gray-900 dark:text-gray-100">
             LeetCode <span className="bg-gradient-to-r from-accent-violet to-accent-violet/80 bg-clip-text text-transparent">Stats</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-sans">
@@ -98,7 +98,7 @@ export function LeetCodeSection() {
             <div className="flex items-center justify-center mb-4">
               <Code className="w-6 h-6 sm:w-8 sm:h-8 text-accent-violet" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.totalSolved}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-grotesk">{stats.totalSolved}</h3>
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Problems Solved</p>
           </motion.div>
 
@@ -111,7 +111,7 @@ export function LeetCodeSection() {
             <div className="flex items-center justify-center mb-4">
               <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-500" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-yellow-500 font-sans">{formatRanking(stats.ranking)}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-yellow-500 font-grotesk">{formatRanking(stats.ranking)}</h3>
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Global Ranking</p>
           </motion.div>
 
@@ -124,7 +124,7 @@ export function LeetCodeSection() {
             <div className="flex items-center justify-center mb-4">
               <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-accent-violet" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-sans">{stats.rating}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-accent-violet font-grotesk">{stats.rating}</h3>
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Contest Rating</p>
           </motion.div>
 
@@ -137,7 +137,7 @@ export function LeetCodeSection() {
             <div className="flex items-center justify-center mb-4">
               <Target className="w-6 h-6 sm:w-8 sm:h-8 text-purple-500" />
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-purple-500 font-sans">{completionPercentage}%</h3>
+            <h3 className="text-xl sm:text-2xl font-bold mb-2 text-purple-500 font-grotesk">{completionPercentage}%</h3>
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-sans text-center">Completion Rate</p>
           </motion.div>
         </div>
@@ -151,7 +151,7 @@ export function LeetCodeSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6"
           >
-            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-sans text-accent-violet">
+            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-grotesk text-accent-violet">
               <span className="w-3 h-3 bg-accent-violet rounded-full"></span>
               Easy Problems
             </h3>
@@ -173,7 +173,7 @@ export function LeetCodeSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6"
           >
-            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-sans text-yellow-500">
+            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-grotesk text-yellow-500">
               <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
               Medium Problems
             </h3>
@@ -195,7 +195,7 @@ export function LeetCodeSection() {
             transition={{ duration: 0.5, delay: 0.7 }}
             className="bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg p-6"
           >
-            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-sans text-red-500">
+            <h3 className="text-lg font-semibold mb-4 flex items-center gap-2 font-grotesk text-red-500">
               <span className="w-3 h-3 bg-red-500 rounded-full"></span>
               Hard Problems
             </h3>

@@ -32,7 +32,7 @@ export function ContactSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-sans text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 font-grotesk text-gray-900 dark:text-gray-100">
             Get In <span className="bg-gradient-to-r from-accent-violet to-accent-violet/80 bg-clip-text text-transparent">Touch</span>
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto font-sans">
@@ -48,7 +48,7 @@ export function ContactSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="p-4 lg:p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg"
           >
-            <h3 className="text-xl lg:text-2xl font-bold mb-6 font-sans text-accent-violet">Let's Connect</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-6 font-grotesk text-accent-violet">Let's Connect</h3>
             
             <div className="space-y-4">
               <div className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export function ContactSection() {
             </div>
 
             <div className="mt-6 lg:mt-8">
-              <h4 className="text-base lg:text-lg font-semibold mb-4 font-sans text-accent-violet">Available for:</h4>
+              <h4 className="text-base lg:text-lg font-semibold mb-4 font-grotesk text-accent-violet">Available for:</h4>
               <ul className="space-y-2 text-gray-700 dark:text-gray-300 font-sans text-sm lg:text-base">
                 <li>Full-time opportunities</li>
                 <li>Freelance projects</li>
@@ -87,7 +87,7 @@ export function ContactSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="p-4 lg:p-6 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg"
           >
-            <h3 className="text-xl lg:text-2xl font-bold mb-6 font-sans text-accent-violet">Follow Me</h3>
+            <h3 className="text-xl lg:text-2xl font-bold mb-6 font-grotesk text-accent-violet">Follow Me</h3>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4">
               {siteConfig.social.map((social) => {
@@ -108,7 +108,7 @@ export function ContactSection() {
             </div>
 
             <div className="mt-6 lg:mt-8">
-              <h4 className="text-base lg:text-lg font-semibold mb-4 font-sans text-accent-violet">Quick Links</h4>
+              <h4 className="text-base lg:text-lg font-semibold mb-4 font-grotesk text-accent-violet">Quick Links</h4>
               <div className="space-y-3">
                 <a
                   href="#projects"

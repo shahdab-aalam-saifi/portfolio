@@ -30,7 +30,7 @@ export function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-sans text-gray-900 dark:text-gray-100">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 font-grotesk text-gray-900 dark:text-gray-100">
             About <span className="bg-gradient-to-r from-accent-violet to-accent-violet/80 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 dark:text-gray-300 max-w-4xl mx-auto font-sans">
@@ -45,12 +45,12 @@ export function AboutSection() {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl lg:text-3xl font-bold mb-6 font-sans text-accent-violet">Skills & Technologies</h3>
+            <h3 className="text-2xl lg:text-3xl font-bold mb-6 font-grotesk text-accent-violet">Skills & Technologies</h3>
             
             {Object.entries(skillCategories).map(([category, skills]) => (
               skills.length > 0 && (
                 <div key={category} className="mb-6">
-                  <h4 className="text-lg lg:text-xl font-semibold mb-3 capitalize text-accent-violet font-sans">
+                  <h4 className="text-lg lg:text-xl font-semibold mb-3 capitalize text-accent-violet font-grotesk">
                     {category}
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -88,7 +88,7 @@ export function AboutSection() {
             className="space-y-4 lg:space-y-6"
           >
             <div className="p-5 lg:p-7 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-              <h4 className="text-xl lg:text-2xl font-semibold mb-4 font-sans text-accent-violet">What I Do</h4>
+              <h4 className="text-xl lg:text-2xl font-semibold mb-4 font-grotesk text-accent-violet">What I Do</h4>
               <ul className="space-y-3 lg:space-y-4 text-gray-700 dark:text-gray-300 font-sans text-base lg:text-lg">
                 <li>Build responsive and scalable web applications</li>
                 <li>Design and implement RESTful APIs</li>
@@ -99,7 +99,7 @@ export function AboutSection() {
             </div>
 
             <div className="p-5 lg:p-7 bg-white dark:bg-[#181f27] border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
-              <h4 className="text-xl lg:text-2xl font-semibold mb-4 font-sans text-accent-violet">My Approach</h4>
+              <h4 className="text-xl lg:text-2xl font-semibold mb-4 font-grotesk text-accent-violet">My Approach</h4>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-sans text-base lg:text-lg">
                 I believe in writing clean, maintainable code and creating user experiences 
                 that are both beautiful and functional. I'm always learning new technologies 
